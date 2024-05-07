@@ -11,6 +11,8 @@
 		FFC838602BEAA25100C95B1B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC8385F2BEAA25100C95B1B /* ContentView.swift */; };
 		FFC838622BEAA25200C95B1B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FFC838612BEAA25200C95B1B /* Assets.xcassets */; };
 		FFC838652BEAA25200C95B1B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FFC838642BEAA25200C95B1B /* Preview Assets.xcassets */; };
+		FFC8386C2BEAA75300C95B1B /* Habit.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC8386B2BEAA75300C95B1B /* Habit.swift */; };
+		FFC8386E2BEAA92B00C95B1B /* AddHabitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC8386D2BEAA92B00C95B1B /* AddHabitView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +21,8 @@
 		FFC8385F2BEAA25100C95B1B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		FFC838612BEAA25200C95B1B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FFC838642BEAA25200C95B1B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		FFC8386B2BEAA75300C95B1B /* Habit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Habit.swift; sourceTree = "<group>"; };
+		FFC8386D2BEAA92B00C95B1B /* AddHabitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddHabitView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +57,8 @@
 			children = (
 				FFC8385D2BEAA25100C95B1B /* HabitTrackerApp.swift */,
 				FFC8385F2BEAA25100C95B1B /* ContentView.swift */,
+				FFC8386D2BEAA92B00C95B1B /* AddHabitView.swift */,
+				FFC8386B2BEAA75300C95B1B /* Habit.swift */,
 				FFC838612BEAA25200C95B1B /* Assets.xcassets */,
 				FFC838632BEAA25200C95B1B /* Preview Content */,
 			);
@@ -137,6 +143,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FFC8386C2BEAA75300C95B1B /* Habit.swift in Sources */,
+				FFC8386E2BEAA92B00C95B1B /* AddHabitView.swift in Sources */,
 				FFC838602BEAA25100C95B1B /* ContentView.swift in Sources */,
 				FFC8385E2BEAA25100C95B1B /* HabitTrackerApp.swift in Sources */,
 			);

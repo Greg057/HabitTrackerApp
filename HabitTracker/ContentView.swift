@@ -6,21 +6,44 @@
 //
 
 import SwiftUI
+import SwiftData
 
 struct ContentView: View {
+    @Environment(\.modelContext) var modelContext
+    @Query var habits: [Habit]
+    
+    @State private var showingAddHabitSheet = false
+    
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("This will be a Habit Tracker!")
-            
-            Text("Just testing git and GitHub")
+        NavigationStack {
+            VStack {
+                List {
+                    ForEach(habits) { habit in
+                        HStack {
+                            VStack(alignment: .leading) {
+                                Text(habit.name)
+                                    .font(.headline)
+                                
+                                Text("Goal: \(habit.count)")
+                                    .foregroundStyle(.secondary)
+                            }
+                        }
+                    }
+                }
+                .listRowSpacing(10)
+            }
+            .navigationTitle("Today")
+            .toolbar {
+                Button("Add habit", systemImage: "plus") {
+                    showingAddHabitSheet.toggle()
+                }
+            }
+            .sheet(isPresented: $showingAddHabitSheet, content: AddHabitView.init)
         }
-        .padding()
     }
 }
 
 #Preview {
     ContentView()
+        .modelContainer(for: Habit.self)
 }
