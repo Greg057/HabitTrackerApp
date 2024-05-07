@@ -14,6 +14,8 @@ struct ContentView: View {
                 .imageScale(.large)
                 .foregroundStyle(.tint)
             Text("This will be a Habit Tracker!")
+            
+            Text("Just testing git and GitHub")
         }
         .padding()
     }
