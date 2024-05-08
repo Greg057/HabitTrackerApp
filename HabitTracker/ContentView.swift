@@ -18,22 +18,28 @@ struct ContentView: View {
     
     var body: some View {
         NavigationStack {
-            VStack {
+            ScrollView {
+                Spacer()
+                    .frame(height: 30)
+                
                 ZStack {
                     Circle()
                         .stroke(.blue.opacity(0.5), lineWidth: 25)
-                        .frame(width: 200)
+                        .frame(width: 175)
                     
                     Circle()
                         .trim(from: 0, to: dailyProgress)
                         .stroke(.blue, style: StrokeStyle(lineWidth: 25, lineCap: .round))
-                        .frame(width: 200)
+                        .frame(width: 175)
                         .rotationEffect(.degrees(-90))
                         .animation(.easeOut(duration: 0.3), value: dailyProgress)
+                    
+                    Text(dailyProgress.formatted(.percent))
+                        .font(.largeTitle.bold())
                 }
                 
                 Spacer()
-                    .frame(height: 50)
+                    .frame(height: 30)
                 
                 List {
                     ForEach(habits) { habit in
@@ -50,6 +56,7 @@ struct ContentView: View {
                     .listRowBackground(Color.secondary.opacity(0.1))
                 }
                 .listRowSpacing(10)
+                .scaledToFit()
                 .scrollContentBackground(.hidden)
             }
             .navigationTitle("Today")
@@ -60,6 +67,7 @@ struct ContentView: View {
             }
             .sheet(isPresented: $showingAddHabitSheet, content: AddHabitView.init)
         }
+        
     }
 }
 
