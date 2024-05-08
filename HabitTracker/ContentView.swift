@@ -52,12 +52,18 @@ struct ContentView: View {
                 List {
                     ForEach(habits) { habit in
                         HStack {
-                            Image(systemName: "dumbbell.fill")
-                                .padding(.trailing, 10)
+                            ZStack {
+                                Circle()
+                                    .foregroundStyle(.blue.opacity(0.4))
+                                    .frame(width: 40)
+                                
+                                Image(systemName: "dumbbell.fill")
+                            }
+                            .padding(.trailing, 10)
                             
                             VStack(alignment: .leading) {
                                 Text(habit.name)
-                                    .font(.headline)
+                                    .font(.title3.bold())
                                 
                                 Text("Goal: \(habit.count) ")
                                     .foregroundStyle(.secondary)
@@ -75,6 +81,7 @@ struct ContentView: View {
                                     .font(.title.bold())
                             }
                         }
+                        .opacity(habit.isCompleted ? 0.5 : 1)
                     }
                     .onDelete(perform: { indexSet in
                         for index in indexSet {
