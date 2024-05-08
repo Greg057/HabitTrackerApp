@@ -14,7 +14,15 @@ struct ContentView: View {
     
     @State private var showingAddHabitSheet = false
     
-    @State private var dailyProgress = 0.0
+    var dailyProgress: Double {
+        var completedCount = 0.0
+        for habit in habits {
+            if habit.isCompleted {
+                completedCount += 1
+            }
+        }
+        return completedCount / Double(habits.count)
+    }
     
     var body: some View {
         NavigationStack {
@@ -34,25 +42,46 @@ struct ContentView: View {
                         .rotationEffect(.degrees(-90))
                         .animation(.easeOut(duration: 0.3), value: dailyProgress)
                     
-                    Text(dailyProgress.formatted(.percent))
+                    Text(String(format: "%.0f%%", round(dailyProgress * 100)))
                         .font(.largeTitle.bold())
                 }
                 
                 Spacer()
                     .frame(height: 30)
-                
+                                
                 List {
                     ForEach(habits) { habit in
                         HStack {
+                            Image(systemName: "dumbbell.fill")
+                                .padding(.trailing, 10)
+                            
                             VStack(alignment: .leading) {
                                 Text(habit.name)
                                     .font(.headline)
                                 
-                                Text("Goal: \(habit.count)")
+                                Text("Goal: \(habit.count) ")
                                     .foregroundStyle(.secondary)
+                            }
+                            .padding(.vertical, 8)
+                            
+                            Spacer()
+                            
+                            Button {
+                                withAnimation {
+                                    habit.isCompleted.toggle()
+                                }
+                            } label: {
+                                Image(systemName: habit.isCompleted ? "checkmark.circle.fill" : "circle")
+                                    .font(.title.bold())
                             }
                         }
                     }
+                    .onDelete(perform: { indexSet in
+                        for index in indexSet {
+                            let habit = habits[index]
+                            modelContext.delete(habit)
+                        }
+                    })
                     .listRowBackground(Color.secondary.opacity(0.1))
                 }
                 .listRowSpacing(10)
@@ -67,11 +96,16 @@ struct ContentView: View {
             }
             .sheet(isPresented: $showingAddHabitSheet, content: AddHabitView.init)
         }
-        
     }
 }
 
 #Preview {
-    ContentView()
-        .modelContainer(for: Habit.self)
+    let config = ModelConfiguration(isStoredInMemoryOnly: true)
+    let container = try! ModelContainer(for: Habit.self, configurations: config)
+
+    let habit = Habit(name: "Code", buildHabit: true, count: 1)
+    container.mainContext.insert(habit)
+
+    return ContentView()
+        .modelContainer(container)
 }
