@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FF99E9CF2BEE95CB003C173D /* MainPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF99E9CE2BEE95CB003C173D /* MainPage.swift */; };
+		FF99E9D12BEE96BA003C173D /* SettingsPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF99E9D02BEE96BA003C173D /* SettingsPage.swift */; };
 		FFC8385E2BEAA25100C95B1B /* HabitTrackerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC8385D2BEAA25100C95B1B /* HabitTrackerApp.swift */; };
 		FFC838602BEAA25100C95B1B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC8385F2BEAA25100C95B1B /* ContentView.swift */; };
 		FFC838622BEAA25200C95B1B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FFC838612BEAA25200C95B1B /* Assets.xcassets */; };
@@ -16,6 +18,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FF99E9CE2BEE95CB003C173D /* MainPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPage.swift; sourceTree = "<group>"; };
+		FF99E9D02BEE96BA003C173D /* SettingsPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsPage.swift; sourceTree = "<group>"; };
 		FFC8385A2BEAA25100C95B1B /* HabitTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HabitTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FFC8385D2BEAA25100C95B1B /* HabitTrackerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitTrackerApp.swift; sourceTree = "<group>"; };
 		FFC8385F2BEAA25100C95B1B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -57,6 +61,8 @@
 			children = (
 				FFC8385D2BEAA25100C95B1B /* HabitTrackerApp.swift */,
 				FFC8385F2BEAA25100C95B1B /* ContentView.swift */,
+				FF99E9D02BEE96BA003C173D /* SettingsPage.swift */,
+				FF99E9CE2BEE95CB003C173D /* MainPage.swift */,
 				FFC8386D2BEAA92B00C95B1B /* AddHabitView.swift */,
 				FFC8386B2BEAA75300C95B1B /* Habit.swift */,
 				FFC838612BEAA25200C95B1B /* Assets.xcassets */,
@@ -143,8 +149,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FF99E9CF2BEE95CB003C173D /* MainPage.swift in Sources */,
 				FFC8386C2BEAA75300C95B1B /* Habit.swift in Sources */,
 				FFC8386E2BEAA92B00C95B1B /* AddHabitView.swift in Sources */,
+				FF99E9D12BEE96BA003C173D /* SettingsPage.swift in Sources */,
 				FFC838602BEAA25100C95B1B /* ContentView.swift in Sources */,
 				FFC8385E2BEAA25100C95B1B /* HabitTrackerApp.swift in Sources */,
 			);
