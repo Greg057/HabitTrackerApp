@@ -15,6 +15,7 @@ struct AddHabitView: View {
     @State private var name = ""
     @State private var buildHabit = true
     @State private var count = 1
+    @State private var icon = "dumbbell"
     
     var body: some View {
         Form {
@@ -29,10 +30,20 @@ struct AddHabitView: View {
                 }
                 
                 Stepper("How often per day: \(count)", value: $count, in: 1...99)
+                
+                Picker("Icon", selection: $icon) {
+                    Image(systemName: "dumbbell").tag("dumbbell")
+                    Image(systemName: "laptopcomputer").tag("laptopcomputer")
+                    Image(systemName: "book").tag("book")
+                    Image(systemName: "figure.walk").tag("figure.walk")
+                    Image(systemName: "figure.mind.and.body").tag("figure.mind.and.body")
+                    Image(systemName: "book.pages").tag("book.pages")
+                }
+                .pickerStyle(.wheel)
             }
             
             Button("Add habit") {
-                let newHabit = Habit(name: name, buildHabit: buildHabit, count: count)
+                let newHabit = Habit(name: name, buildHabit: buildHabit, count: count, icon: icon)
                 modelContext.insert(newHabit)
                 dismiss()
             }

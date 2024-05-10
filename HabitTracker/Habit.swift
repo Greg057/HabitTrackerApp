@@ -15,10 +15,12 @@ class Habit: Identifiable {
     var buildHabit: Bool
     var count: Int
     var isCompleted = false
+    var icon: String
     
-    init(name: String, buildHabit: Bool, count: Int) {
+    init(name: String, buildHabit: Bool, count: Int, icon: String) {
         self.name = name
         self.buildHabit = buildHabit
         self.count = count
+        self.icon = icon
     }
 }

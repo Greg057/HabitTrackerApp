@@ -9,20 +9,14 @@ import SwiftUI
 import SwiftData
 
 struct ContentView: View {
-    
-    
     var body: some View {
-        
         TabView {
             MainPage()
                 .tabItem { Label("Home", systemImage: "list.bullet.circle") }
             
             SettingsPage()
                 .tabItem { Label("Settings", systemImage: "gear") }
-            
-        }
-        
-        
+        } 
     }
 }
 

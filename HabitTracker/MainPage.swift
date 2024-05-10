@@ -62,7 +62,7 @@ struct MainPage: View {
                                     .foregroundStyle(.blue.opacity(0.4))
                                     .frame(width: 40)
                                 
-                                Image(systemName: "dumbbell.fill")
+                                Image(systemName: habit.icon)
                             }
                             .padding(.trailing, 10)
                             
@@ -115,7 +115,7 @@ struct MainPage: View {
     let config = ModelConfiguration(isStoredInMemoryOnly: true)
     let container = try! ModelContainer(for: Habit.self, configurations: config)
 
-    let habit = Habit(name: "Code", buildHabit: true, count: 1)
+    let habit = Habit(name: "Workout", buildHabit: true, count: 1, icon: "dumbbell")
     container.mainContext.insert(habit)
 
     return MainPage()
