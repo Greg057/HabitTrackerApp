@@ -14,6 +14,9 @@ struct ContentView: View {
             MainPage()
                 .tabItem { Label("Home", systemImage: "list.bullet.circle") }
             
+            StatsPage()
+                .tabItem { Label("Stats", systemImage: "chart.bar.xaxis.ascending") }
+            
             SettingsPage()
                 .tabItem { Label("Settings", systemImage: "gear") }
         }

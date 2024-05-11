@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FF8870E72BEF70C4006ACD46 /* StatsPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF8870E62BEF70C4006ACD46 /* StatsPage.swift */; };
 		FF99E9CF2BEE95CB003C173D /* MainPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF99E9CE2BEE95CB003C173D /* MainPage.swift */; };
 		FF99E9D12BEE96BA003C173D /* SettingsPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF99E9D02BEE96BA003C173D /* SettingsPage.swift */; };
 		FFC8385E2BEAA25100C95B1B /* HabitTrackerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC8385D2BEAA25100C95B1B /* HabitTrackerApp.swift */; };
@@ -18,6 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FF8870E62BEF70C4006ACD46 /* StatsPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsPage.swift; sourceTree = "<group>"; };
 		FF99E9CE2BEE95CB003C173D /* MainPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPage.swift; sourceTree = "<group>"; };
 		FF99E9D02BEE96BA003C173D /* SettingsPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsPage.swift; sourceTree = "<group>"; };
 		FFC8385A2BEAA25100C95B1B /* HabitTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HabitTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -61,6 +63,7 @@
 			children = (
 				FFC8385D2BEAA25100C95B1B /* HabitTrackerApp.swift */,
 				FFC8385F2BEAA25100C95B1B /* ContentView.swift */,
+				FF8870E62BEF70C4006ACD46 /* StatsPage.swift */,
 				FF99E9D02BEE96BA003C173D /* SettingsPage.swift */,
 				FF99E9CE2BEE95CB003C173D /* MainPage.swift */,
 				FFC8386D2BEAA92B00C95B1B /* AddHabitView.swift */,
@@ -150,6 +153,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FF99E9CF2BEE95CB003C173D /* MainPage.swift in Sources */,
+				FF8870E72BEF70C4006ACD46 /* StatsPage.swift in Sources */,
 				FFC8386C2BEAA75300C95B1B /* Habit.swift in Sources */,
 				FFC8386E2BEAA92B00C95B1B /* AddHabitView.swift in Sources */,
 				FF99E9D12BEE96BA003C173D /* SettingsPage.swift in Sources */,

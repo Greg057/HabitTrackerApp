@@ -10,10 +10,7 @@ import SwiftData
 
 struct SettingsPage: View {
     var body: some View {
-        Button("tap") {
-            let day = Calendar.current.component(.day, from: Date())
-            print("\(day)")
-        }
+        Text("Settings")
     }
 }
 
