@@ -70,7 +70,7 @@ struct MainPage: View {
                                 Text(habit.name)
                                     .font(.title3.bold())
                                 
-                                Text("Goal: \(habit.count) ")
+                                Text("Goal: \(habit.count)")
                                     .foregroundStyle(.secondary)
                             }
                             .padding(.vertical, 8)
@@ -108,6 +108,14 @@ struct MainPage: View {
             }
             .sheet(isPresented: $showingAddHabitSheet, content: AddHabitView.init)
         }
+        .onAppear(perform: {
+            for habit in habits {
+                if habit.lastUpdatedDay != Calendar.current.component(.day, from: Date()) {
+                    habit.isCompleted = false
+                    habit.lastUpdatedDay = Calendar.current.component(.day, from: Date())
+                }
+            }
+        })
     }
 }
 
@@ -115,8 +123,11 @@ struct MainPage: View {
     let config = ModelConfiguration(isStoredInMemoryOnly: true)
     let container = try! ModelContainer(for: Habit.self, configurations: config)
 
-    let habit = Habit(name: "Workout", buildHabit: true, count: 1, icon: "dumbbell")
+    let habit = Habit(name: "Workout", buildHabit: true, count: 1, icon: "dumbbell", lastUpdatedDay: Calendar.current.component(.day, from: Date()))
     container.mainContext.insert(habit)
+    
+    let newHabit = Habit(name: "Code", buildHabit: true, count: 1, icon: "laptopcomputer", lastUpdatedDay: Calendar.current.component(.day, from: Date()))
+    container.mainContext.insert(newHabit)
 
     return MainPage()
         .modelContainer(container)

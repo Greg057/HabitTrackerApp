@@ -43,7 +43,7 @@ struct AddHabitView: View {
             }
             
             Button("Add habit") {
-                let newHabit = Habit(name: name, buildHabit: buildHabit, count: count, icon: icon)
+                let newHabit = Habit(name: name, buildHabit: buildHabit, count: count, icon: icon, lastUpdatedDay: Calendar.current.component(.day, from: Date()))
                 modelContext.insert(newHabit)
                 dismiss()
             }
