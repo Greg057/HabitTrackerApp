@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Charts
 
 struct StatsPage: View {
     var body: some View {

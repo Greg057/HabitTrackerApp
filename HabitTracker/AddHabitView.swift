@@ -30,7 +30,7 @@ struct AddHabitView: View {
                         Text("Break a habit").tag(false)
                     }
                     
-                    Stepper("How often per day: \(count)", value: $count, in: 1...99)
+                    Stepper(buildHabit ? "How often per day: \(count)" : "Max limit per day: \(count)", value: $count, in: 1...99)
                     
                     Picker("Icon", selection: $icon) {
                         Image(systemName: "dumbbell").tag("dumbbell")

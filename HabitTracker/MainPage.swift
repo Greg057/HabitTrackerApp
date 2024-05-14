@@ -70,7 +70,7 @@ struct MainPage: View {
                                 Text(habit.name)
                                     .font(.title3.bold())
                                 
-                                Text("Goal: \(habit.count)")
+                                Text(habit.buildHabit ? "Goal: \(habit.count)" : "Maximum: \(habit.count)")
                                     .foregroundStyle(.secondary)
                             }
                             .padding(.vertical, 8)
@@ -128,6 +128,9 @@ struct MainPage: View {
     
     let newHabit = Habit(name: "Code", buildHabit: true, count: 1, icon: "laptopcomputer", lastUpdatedDay: Calendar.current.component(.day, from: Date()))
     container.mainContext.insert(newHabit)
+    
+    let newHabit2 = Habit(name: "Social Media", buildHabit: false, count: 2, icon: "laptopcomputer", lastUpdatedDay: Calendar.current.component(.day, from: Date()))
+    container.mainContext.insert(newHabit2)
 
     return MainPage()
         .modelContainer(container)
