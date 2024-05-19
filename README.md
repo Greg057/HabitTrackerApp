@@ -11,7 +11,7 @@ This project is a simple habit tracking app for iOS, built with Swift, SwiftUI, 
 ## Technologies Used
 - **Swift**: Core programming language for iOS development.
 - **SwiftUI**: Framework for building user interfaces across all Apple platforms.
-- **Swift Data**: For managing and persisting habit data.
+- **SwiftData**: For managing and persisting habit data.
 
 ## Project Status
 This app is a work in progress, developed as a learning exercise to deepen my understanding of Swift and iOS development.
